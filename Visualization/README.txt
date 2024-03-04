@@ -1,0 +1,1 @@
+This is to be run as a simple root macro and will take as inputs the jet tree (so only particles clustered into jets).  It is possible to change the input to get the px,py,pz and then use all particles if desired.
