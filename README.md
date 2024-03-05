@@ -1,20 +1,16 @@
-To be run in the examples directory of PYTHIA 8.310 by replacing the existing makefile
+1. Download and Install
+- ROOT: https://root.cern/install/
+- Fastjet 3: https://fastjet.fr/
+- PYTHIA 8: https://pythia.org/
 
-It is expected you installed pythia with the ROOT and fastjet additional packages
+2. Go to PYTHIA 8 directory and compile:
+- ./configure --with-root --with-fastjet3
+- make
 
-The 'new' configurations are:
+3. Generate events with PYTHIA 8 and save trees:
+- Copy all files in this repository into the examples: cp -r * <pythia8>/examples/
+- cd examples
+- make pp_mb_cp5
+- ./pp_mb_cp5 <jobnumber>
 
-pp_highMultGen -> LHC jets with potential to filter on jet multiplicity
-DIS -> lepton-proton (for EIC or DIS physics)
-LEP1 -> lepton-lepton at Z pole (only Z->qqbar process for now)
-photonHadron -> anything with a photon hitting a proton (photoproduction or UPC - see code for more details)
-
-You can build the relevant config with, for example:
-
-make DIS
-
-and run with
-
-./DIS <jobnumber>
-
-
+4. Analyze generated trees using code in Macros directory
